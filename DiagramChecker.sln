@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagramChecker", "DiagramChecker\DiagramChecker.csproj", "{75D65115-57CF-4DCE-BEEE-C29666BB1EFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75D65115-57CF-4DCE-BEEE-C29666BB1EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D65115-57CF-4DCE-BEEE-C29666BB1EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D65115-57CF-4DCE-BEEE-C29666BB1EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D65115-57CF-4DCE-BEEE-C29666BB1EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8441BD9E-9540-4C44-A881-05CE207FA038}
+	EndGlobalSection
+EndGlobal
