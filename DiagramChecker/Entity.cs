@@ -1,6 +1,6 @@
 ﻿namespace DiagramChecker
 {
-    public class Entity
+    public class Entity : INode
     {
         IList<SermAttribute> attributes;
         IList<Relationship> relationships;

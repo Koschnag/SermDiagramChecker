@@ -1,6 +1,6 @@
 ﻿namespace DiagramChecker
 {
-    public class  SermDiagram
+    public class  SermDiagram:IDiagram
     {
         IList<Entity> entities;
     }

@@ -1,6 +1,6 @@
 ﻿namespace DiagramChecker
 {
-    public class SermAttribute
+    public class SermAttribute:IColor
     {
         public string Name { get; set; }
         public string Type { get; set; }
