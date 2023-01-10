@@ -15,6 +15,6 @@ namespace DiagramChecker.Contracts
         IColor Color { get; set; }
         IResult? Result { get; set; }
 
-        void Check(IEdge? other, IColorComparer comparer)
+        void Check(IEdge? other, IColorComparer comparer);
     }
 }

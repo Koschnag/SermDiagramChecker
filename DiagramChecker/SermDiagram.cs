@@ -4,6 +4,11 @@ namespace DiagramChecker
 {
     public class  SermDiagram:IDiagram
     {
-       public IList<INode> StartNodes { get; set; }
+        public SermDiagram()
+        {
+            StartNodes = new List<INode>();
+        }
+
+        public IList<INode> StartNodes { get; set; }
      }
 }

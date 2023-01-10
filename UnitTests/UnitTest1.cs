@@ -1,14 +1,13 @@
 using DiagramChecker;
 using DiagramChecker.Contracts;
 
-namespace CoreTests
+namespace UnitTests
 {
-    public class HundeSchuleTest
+    [TestClass]
+    public class UnitTest1
     {
         IDiagram diagram;
-        [SetUp]
-        public void Setup()
-        {
+        private void Setup() {
             diagram = new SermDiagram();
             var besitzer = new Entity("Besitzer");
 
@@ -32,10 +31,11 @@ namespace CoreTests
 
             var relationship = new Relationship(besitzer, hund);
         }
-
-        [Test]
+        
+        [TestMethod]
         public void CreationTest()
         {
+            Setup();
             //Testing the Setup Method
             Assert.AreEqual(1, diagram.StartNodes.Count);
             Assert.AreEqual(2, diagram.StartNodes[0].Attributes.Count);
@@ -54,10 +54,6 @@ namespace CoreTests
             Assert.AreEqual("Key", diagram.StartNodes[0].Relationships[0].To.Attributes[1].Type);
             Assert.AreEqual("Name", diagram.StartNodes[0].Relationships[0].To.Attributes[2].Name);
             Assert.AreEqual("Eigenschaft", diagram.StartNodes[0].Relationships[0].To.Attributes[2].Type);
-
-
-
-            Assert.Pass();
         }
     }
 }
