@@ -27,5 +27,10 @@ namespace DiagramChecker
             Color.Result = comparer.Compare(Color, other.Color);
             Result = result;
         }
+
+        public override string ToString()
+        {
+            return "From: " + From.ToString() + ", To:   " + To.ToString() + ", Color:   " + Color.ToString();
+        }
     }
 }

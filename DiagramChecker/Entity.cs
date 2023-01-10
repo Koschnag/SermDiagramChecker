@@ -13,11 +13,10 @@ namespace DiagramChecker
 
         public void Check(INode other, IColorComparer colorComparer)
         {
-            var result = new Result(1);
+            Result = new Result();
             if (other == null)
             {
-                result.Annotation = "Entity is null";
-                return;
+                throw new ArgumentNullException(nameof(other));
             }
 
             //Check if my entity has more attributes
@@ -26,7 +25,7 @@ namespace DiagramChecker
                 var otherAttribute = other.Attributes.FirstOrDefault(a => colorComparer.Compare(a, attribute).IsRight);
                 if (otherAttribute == null)
                 {
-                    Result.Annotation+=("Attribute is missing in the solution: "+attribute+".");
+                    Result.Annotation+=("Attribute is missing in the solution: "+attribute.ToString()+".");
                     continue;
                 }
                 attribute.Result = colorComparer.Compare(attribute, otherAttribute);
@@ -37,7 +36,7 @@ namespace DiagramChecker
             {
                 if (Attributes.FirstOrDefault(a => colorComparer.Compare(a, attribute).IsRight) == null)
                 {
-                    Result.Annotation+=("Solution has more attributes: "+attribute+".");
+                    Result.Annotation+=("Missing attribute: "+attribute.ToString()+".");
                 }
             }
 
@@ -47,7 +46,7 @@ namespace DiagramChecker
                 var otherRelationship = other.Relationships.FirstOrDefault(r => r.To == relationship.To);
                 if (otherRelationship == null)
                 {
-                    relationship.Result.Annotation = "Relationship is missing in the solution: " + relationship.To + ".";
+                    relationship.Result.Annotation = "Relationship is missing in the solution: " + relationship.ToString() + ".";
                     continue;
                 }
                 relationship.Check(otherRelationship, colorComparer);
@@ -58,12 +57,10 @@ namespace DiagramChecker
             {
                 if (Relationships.FirstOrDefault(r => r.To == relationship.To) == null)
                 {
-                    result.Annotation+="Solution has more relationships: " + relationship + ".";
+                    Result.Annotation+="Missing relationship: " + relationship + ".";
                 }
             }
 
-
-            Result = result;
         }
     }
 }
