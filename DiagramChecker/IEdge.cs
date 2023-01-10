@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DiagramChecker
 {
-    internal interface IEdge
+    public interface IEdge
     {
+        INode From { get; set; }
+        INode To { get; set; }
+        string Name { get; set; }
     }
 }

@@ -7,7 +7,6 @@ namespace CoreTests
         [SetUp]
         public void Setup()
         {
-            IDiagram 
         }
 
         [Test]

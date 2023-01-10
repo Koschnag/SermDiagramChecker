@@ -2,6 +2,6 @@
 {
     public class  SermDiagram:IDiagram
     {
-        IList<Entity> entities;
-    }
+       public IList<INode> StartNodes { get; set; }
+     }
 }

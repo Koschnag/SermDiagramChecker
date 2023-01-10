@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagramChecker", "DiagramCh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTests", "CoreTests\CoreTests.csproj", "{F0240FC9-96EF-4AAC-A8DE-6B2103C29ED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{E1B8BDF5-03AA-4150-9C23-ACC0A26CF5A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F0240FC9-96EF-4AAC-A8DE-6B2103C29ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0240FC9-96EF-4AAC-A8DE-6B2103C29ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0240FC9-96EF-4AAC-A8DE-6B2103C29ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B8BDF5-03AA-4150-9C23-ACC0A26CF5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B8BDF5-03AA-4150-9C23-ACC0A26CF5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B8BDF5-03AA-4150-9C23-ACC0A26CF5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B8BDF5-03AA-4150-9C23-ACC0A26CF5A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

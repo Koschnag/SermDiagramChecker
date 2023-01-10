@@ -2,7 +2,7 @@
 {
     public class Entity : INode
     {
-        IList<SermAttribute> attributes;
-        IList<Relationship> relationships;
+        public IList<IColor> Attributes { get; set; }
+        public IList<IEdge> Relationships { get; set; }
     }
 }
