@@ -18,7 +18,7 @@
             MaxPoints = maxPoints;
             Points = 0;
         }
-
+        public bool IsRight => Points == MaxPoints;
         public string Annotation { get; set; }
         public int MaxPoints { get; set; }
         public int Points { get; set; }

@@ -1,4 +1,6 @@
-﻿using DiagramChecker.Contracts;
+﻿using DiagramChecker.Comperators;
+using DiagramChecker.Contracts;
+using DiagramChecker.Results;
 
 namespace DiagramChecker
 {
@@ -7,5 +9,7 @@ namespace DiagramChecker
         public string Name { get; set; }
         public string Type { get; set; }
         public string? Description { get; set; }
+        public IResult? Result { get; set; }
+
     }
 }
