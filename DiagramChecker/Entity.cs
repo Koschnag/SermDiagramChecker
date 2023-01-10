@@ -7,6 +7,7 @@ namespace DiagramChecker
 {
     public class Entity : INode
     {
+        public string Name { get; set; }
         public IList<IColor> Attributes { get; set; }
         public IList<IEdge> Relationships { get; set; }
         public IResult? Result { get; set; }

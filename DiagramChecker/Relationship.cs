@@ -6,6 +6,12 @@ namespace DiagramChecker
 {
     public class Relationship : IEdge, ICheckable
     {
+        public Relationship(INode besitzer, INode hund)
+        {
+            From = besitzer;
+            To = hund;
+        }
+
         public INode From { get; set; }
         public INode To { get; set; }
         public IColor Color { get; set; }
