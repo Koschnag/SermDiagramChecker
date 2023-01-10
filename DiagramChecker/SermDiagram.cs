@@ -1,4 +1,6 @@
-﻿namespace DiagramChecker
+﻿using DiagramChecker.Contracts;
+
+namespace DiagramChecker
 {
     public class  SermDiagram:IDiagram
     {

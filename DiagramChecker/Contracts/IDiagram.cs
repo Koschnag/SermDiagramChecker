@@ -1,4 +1,4 @@
-﻿namespace DiagramChecker
+﻿namespace DiagramChecker.Contracts
 {
     public interface IDiagram
     {

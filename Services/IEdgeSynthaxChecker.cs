@@ -1,4 +1,4 @@
-﻿using DiagramChecker;
+﻿using DiagramChecker.Contracts;
 
 namespace Services
 {

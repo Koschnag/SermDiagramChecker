@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiagramChecker
+namespace DiagramChecker.Contracts
 {
     public interface IEdge
     {
         INode From { get; set; }
         INode To { get; set; }
-        string Name { get; set; }
+        IColor Color { get; set; }
     }
 }
