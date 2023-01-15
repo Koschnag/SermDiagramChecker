@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormOldUI", "WinFormOldUI\WinFormOldUI.csproj", "{A1C620E7-ED60-40BF-9316-9123D7B49A7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3AB1762E-0444-4680-8FD8-F55F51DDD3B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3AB1762E-0444-4680-8FD8-F55F51DDD3B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{52841285-F51E-4285-8998-07DBA6A5699D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SermTree", "SermTree\SermTree.csproj", "{E453927E-86C9-4A78-AC4A-56872FBF2D59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{3AB1762E-0444-4680-8FD8-F55F51DDD3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AB1762E-0444-4680-8FD8-F55F51DDD3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AB1762E-0444-4680-8FD8-F55F51DDD3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52841285-F51E-4285-8998-07DBA6A5699D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52841285-F51E-4285-8998-07DBA6A5699D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52841285-F51E-4285-8998-07DBA6A5699D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52841285-F51E-4285-8998-07DBA6A5699D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E453927E-86C9-4A78-AC4A-56872FBF2D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E453927E-86C9-4A78-AC4A-56872FBF2D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E453927E-86C9-4A78-AC4A-56872FBF2D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E453927E-86C9-4A78-AC4A-56872FBF2D59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
