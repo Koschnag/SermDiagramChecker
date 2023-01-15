@@ -1,10 +1,12 @@
-﻿using SermTree.Contracts;
+﻿using SermTreeCore.Contracts;
 
-namespace SermTree.Models
+namespace SermTreeCore.Models
 {
     public class SermTreeNode : ITreeNode
     {
-        public IColor Color{get; set;}
-        public IList<INode> Children { get; set; }
+        public string Name { get; set; }
+        public IList<IColor> Attributes { get; set; }
+        public IPossibleSuccessors Successor { get; set; }
+        public IResult? Result { get; set; }
     }
 }

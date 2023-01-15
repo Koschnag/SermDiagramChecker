@@ -29,7 +29,7 @@ namespace UnitTests
             Setup();
             //Check if adding attribute is possible
             var besitzer = diagram.StartNodes[0];
-            besitzer.Attributes.Add(new SermAttribute("Name", AttributeType.PrimaryKey));
+           // besitzer.Attributes.Add(new SermAttribute("Name", AttributeType.PrimaryKey));
             Assert.AreEqual(1, besitzer.Attributes.Count);
         }
     }

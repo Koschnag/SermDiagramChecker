@@ -1,8 +1,8 @@
-﻿namespace SermTree.Contracts
+﻿namespace SermTreeCore.Contracts
 {
 
     public interface ITree
     {
-        INode Root { get; set; }
+        ITreeNode Root { get; set; }
     }
 }

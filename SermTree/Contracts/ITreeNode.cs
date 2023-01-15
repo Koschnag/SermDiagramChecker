@@ -1,8 +1,9 @@
-﻿namespace SermTree.Contracts
+﻿namespace SermTreeCore.Contracts
 {
     public interface ITreeNode
     {
-        IColor Color { get; set; }
-        IList<INode> Children { get; set; }
+        IList<IColor> Attributes { get; set; }
+        string Name { get; set; }
+        IPossibleSuccessors Successor { get; set; }
     }
 }

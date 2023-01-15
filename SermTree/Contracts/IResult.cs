@@ -1,4 +1,4 @@
-﻿namespace SermTree.Contracts
+﻿namespace SermTreeCore.Contracts
 {
     public interface IResult
     {

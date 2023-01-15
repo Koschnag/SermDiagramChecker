@@ -1,9 +1,11 @@
-﻿using SermTree.Contracts;
+﻿using SermTreeCore.Contracts;
 
-namespace SermTree.Models
+namespace SermTreeCore.Models
 {
     public class SermTree : ITree
     {
-        public INode Root { get; set; }
+        string? Name { get; set; }
+        public ITreeNode Root { get; set; }
+        public IResult? Result { get; set; }
     }
 }

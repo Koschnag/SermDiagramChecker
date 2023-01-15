@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{52841285-F51E-4285-8998-07DBA6A5699D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SermTree", "SermTree\SermTree.csproj", "{E453927E-86C9-4A78-AC4A-56872FBF2D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SermTreeCore", "SermTree\SermTreeCore.csproj", "{E453927E-86C9-4A78-AC4A-56872FBF2D59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
