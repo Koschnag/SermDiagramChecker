@@ -2,9 +2,9 @@
 {
     public interface IEdge
     {
-        INode From { get; set; }
-        INode To { get; set; }
-        IColor Color { get; set; }
+        ITreeNode From { get; set; }
+        ITreeNode To { get; set; }
+        string Type { get; set; }
         IResult? Result { get; set; }
     }
 }

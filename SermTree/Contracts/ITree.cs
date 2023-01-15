@@ -3,6 +3,6 @@
 
     public interface ITree
     {
-        ITreeNode Root { get; set; }
+        IList<ITreeNode> Roots { get; set; }
     }
 }

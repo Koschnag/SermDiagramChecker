@@ -1,4 +1,5 @@
-﻿using SermTreeCore.Helper;
+﻿using SermTreeCore.Contracts;
+using SermTreeCore.Helper;
 using SermTreeCore.Models;
 
 namespace UnitTests.SermTreeTests
@@ -6,42 +7,79 @@ namespace UnitTests.SermTreeTests
     [TestClass]
     public class SermTreeTest
     {
-        [TestMethod]
-        public void CreateSermTreeWithAStartNode()
-        {
-            var tree = new SermTree();
-            var startNode = new SermTreeNode("StartNode");
-            tree.Root = startNode;
-            Assert.AreEqual(tree.Root, startNode);
-        }
 
         [TestMethod]
-        public void CreateSermTreeWithAStartNodeAndAChild()
+        public void CreateSermTreeWithAStartNodeAndOneAttribute()
         {
             var tree = new SermTree();
-            var startNode = new SermTreeNode
+            var Besitzer = new SermTreeNode
             {
-                Name = "StartNode",
-            };
-
-            var childNode = new SermTreeNode
-            {
-                Name = "ChildNode",
-                Color = new SermAttribute
+                Name = "Besitzer",
+                Attributes = new List<IColor>
                 {
-                    Name = "BNummer",
-                    Type = AttributeTypes.PrimaryKey,
+                    new SermAttribute
+                    {
+                        Name = "BNummer",
+                        Type = AttributeTypes.PrimaryKey,
+                    }
                 }
             };
-            
-
-            startNode.Children.Add(childNode);
-            tree.Root = startNode;
-            Assert.AreEqual(tree.Root.Children[0], childNode);
+            tree.Roots.Add(Besitzer);
+            Assert.AreEqual(tree.Roots[0], Besitzer);
         }
 
+        [TestMethod]
+        public void CreateSermTreeWithOneSuccessor()
+        {
+            var tree = new SermTree();
+            var Besitzer = new SermTreeNode
+            {
+                Name = "Besitzer",
+                Attributes = new List<IColor>
+                {
+                    new SermAttribute
+                    {
+                        Name = "BNummer",
+                        Type = AttributeTypes.PrimaryKey,
+                    },
+                    
+                    //Name
+                    new SermAttribute
+                    {
+                        Name = "Name",
+                        Type = AttributeTypes.Property,
+                    }
+                }
+            };
+            var Hund = new SermTreeNode
+            {
+                Name = "Hund",
+                Attributes = new List<IColor>
+                {
+                    new SermAttribute
+                    {
+                        Name = "HNummer",
+                        Type = AttributeTypes.PrimaryKey,
+                    },
+                    new SermAttribute
+                    {
+                        Name = "BNummer",
+                        Type = AttributeTypes.Property,
+                    },
+                    new SermAttribute
+                    {
+                        Name = "Name",
+                        Type = AttributeTypes.Property,
+                    }
+                }
+            };
 
+            tree.Roots.Add(Besitzer);
+            var connection = TreeNodeConnector.Connect(Besitzer, Hund, RelationshipTypes.OneToMany);
+            Besitzer.Successor.Relationships.Add(connection);
 
+            Assert.AreEqual(Besitzer.Successor.Relationships[0].To, Hund);
+        }
     }
 }
-}
+
