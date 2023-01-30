@@ -1,7 +1,7 @@
 ﻿namespace WebAPI.Repos
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        
+        void SaveChanges();
     }
 }
