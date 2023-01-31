@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SermTreeCore.Contracts;
 using System;
+using WebAPI.DTO.Diagram;
 
 namespace WebAPI.Controllers
 {
@@ -11,13 +12,13 @@ namespace WebAPI.Controllers
     {
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("name")] ITree person)
+        public async Task<IActionResult> Create(Diagram diagram)
         {
             if (ModelState.IsValid)
             {
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(diagram);
         }
-    }
+    } 
 }

@@ -1,4 +1,4 @@
-﻿namespace WebAPI.DTO
+﻿namespace WebAPI.DTO.Diagram
 {
     public class Diagram
     {
@@ -11,6 +11,6 @@
 
         public Connection[] connections { get; set; }
 
-        public Category category { get; set; }
+        public Category? category { get; set; }
     }
 }

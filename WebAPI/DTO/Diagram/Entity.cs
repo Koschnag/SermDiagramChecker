@@ -1,6 +1,6 @@
-﻿using Attribute = WebAPI.DTO.Attribute;
+﻿using Attribute = WebAPI.DTO.Diagram.Attribute;
 
-namespace WebAPI.DTO
+namespace WebAPI.DTO.Diagram
 {
     public class Entity
     {

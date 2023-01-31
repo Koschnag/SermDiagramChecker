@@ -1,4 +1,4 @@
-﻿namespace WebAPI.DTO
+﻿namespace WebAPI.DTO.Diagram
 {
     public class Attribute
     {
