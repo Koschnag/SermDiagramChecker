@@ -44,17 +44,23 @@ namespace WebAPI.Wrapper
                 }
             }
 
-            foreach(var id in allRootId)
+            foreach (var id in allRootId)
             {
                 var entity = (from x in inputObject.entities where x.id == id select x).ToList()[0];
                 var node = new SermTreeNode();
-                node.Name= entity.entityName;
+                node.Name = entity.entityName;
                 node.Attributes = ConvertAttributes(entity.attributes);
-                node.Successor = ConvertConnections(inputObject.connections);
-            
+                node.Successor = new PossibleSuccessors();
+                rootNodes.Add(node);
             }
 
-
+            foreach (var node in rootNodes)
+            {
+                //Connection Relationshios to Root Nodes
+                
+                //var nextIds= from x in inputObject.connections where x.startEntity == node.
+                
+            }
             return rootNodes;
         }
 
@@ -78,9 +84,18 @@ namespace WebAPI.Wrapper
             return result;
         }
 
-        private static IList<IEdge> ConvertConnections(Connection[] connections)
+        private static IList<IEdge> ConvertConnections(Connection[] connections, int id
         {
-            
+            var y = from x in connections where x.startEntity == id select x;
+            var result = new List<IEdge>();
+            foreach (var connection in y)
+            {
+                var element = new SermRelationship();
+                element.From =  connection.startEntity;
+                element.To = connection.endEntity;
+                element.Target = connection.endEntity;
+                result.Add(element);
+            }
         }
     }
 }

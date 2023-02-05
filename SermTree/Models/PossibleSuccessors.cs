@@ -1,5 +1,4 @@
 ﻿using SermTreeCore.Contracts;
-
 namespace SermTreeCore.Models
 {
     public class PossibleSuccessors : IPossibleSuccessors
