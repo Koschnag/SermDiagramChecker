@@ -1,4 +1,5 @@
 ﻿using SermTreeCore.Contracts;
+using SermTreeCore.Helper;
 using SermTreeCore.Models;
 using System.Runtime.CompilerServices;
 using WebAPI.DTO.Diagram;
@@ -46,22 +47,58 @@ namespace WebAPI.Wrapper
 
             foreach (var id in allRootId)
             {
-                var entity = (from x in inputObject.entities where x.id == id select x).ToList()[0];
-                var node = new SermTreeNode();
-                node.Name = entity.entityName;
-                node.Attributes = ConvertAttributes(entity.attributes);
-                node.Successor = new PossibleSuccessors();
+                Entity entity = CreateEntityFromId(inputObject, id);
+                SermTreeNode node = CreateNodeFromEntity(entity);
+
+                var nextIds = from x in inputObject.connections
+                              where x.startEntity == id
+                              select x.endEntity;
+
+                CreateSuccessorsFromNode(inputObject, node, nextIds);
                 rootNodes.Add(node);
             }
-
-            foreach (var node in rootNodes)
-            {
-                //Connection Relationshios to Root Nodes
-                
-                //var nextIds= from x in inputObject.connections where x.startEntity == node.
-                
-            }
             return rootNodes;
+        }
+
+        private static void CreateSuccessorsFromNode(Diagram inputObject, SermTreeNode node, IEnumerable<int> nextIds)
+        {
+            //Add Successors
+            var nextEntitys = CreateNextEntity(inputObject, nextIds);
+            foreach (var next in nextEntitys)
+            {
+                var relationShip = new SermRelationship();
+                relationShip.From = node;
+                relationShip.To = next;
+                //Type is missing      
+                node.Successor.Relationships.Add(relationShip);
+            }
+        }
+
+        private static List<SermTreeNode> CreateNextEntity(Diagram inputObject, IEnumerable<int> nextIds)
+        {
+            //Create a List of Nodes
+            var result = new List<SermTreeNode>();
+            foreach (var nextId in nextIds)
+            {
+                var nextEntity = CreateEntityFromId(inputObject, nextId);
+                var nextNode = CreateNodeFromEntity(nextEntity);
+                result.Add(nextNode);
+            }
+            return result;
+        }
+
+        private static Entity CreateEntityFromId(Diagram inputObject, int id)
+        {
+            return (from x in inputObject.entities where x.id == id select x).ToList()[0];
+        }
+
+        private static SermTreeNode CreateNodeFromEntity(Entity entity)
+        {
+            var node = new SermTreeNode();
+            node.Name = entity.entityName;
+            node.Attributes = ConvertAttributes(entity.attributes);
+            node.Successor = new PossibleSuccessors();
+            return node;
         }
 
         private static IList<IColor> ConvertAttributes(DTO.Diagram.Attribute[] attributes)
