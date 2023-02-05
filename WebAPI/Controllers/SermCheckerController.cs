@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SermTreeCore.Contracts;
 using System;
 using WebAPI.DTO.Diagram;
+using WebAPI.Wrapper;
 
 namespace WebAPI.Controllers
 {
@@ -16,6 +17,7 @@ namespace WebAPI.Controllers
         {
             if (ModelState.IsValid)
             {
+                var tree = DiagramConverter.ConvertToTree(diagram);
                 return RedirectToAction(nameof(Index));
             }
             return View(diagram);
