@@ -12,6 +12,6 @@ namespace SermTreeCore.Models
         public ITreeNode From { get; set; }
         public ITreeNode To { get; set; }
         public string Type { get; set; }
-        public IResult? Result { get; set; }
+        public IList<IResult> Result { get; set; }
     }
 }

@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiagramChecker\DiagramChecker.csproj" />
     <ProjectReference Include="..\SermTree\SermTreeCore.csproj" />
   </ItemGroup>
 

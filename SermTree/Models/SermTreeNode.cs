@@ -14,6 +14,6 @@ namespace SermTreeCore.Models
         public string Name { get; set; }
         public IList<IColor> Attributes { get; set; }
         public IPossibleSuccessors Successor { get; set; }
-        public IResult? Result { get; set; }
+        public IList<IResult> Result { get; set; }
     }
 }

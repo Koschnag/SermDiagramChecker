@@ -13,14 +13,18 @@ namespace WebAPI.Controllers
     {
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Diagram diagram)
+        public async Task<IActionResult> Create(Diagram diagram, Diagram solution)
         {
             if (ModelState.IsValid)
             {
                 var tree = DiagramConverter.ConvertToTree(diagram);
-                return RedirectToAction(nameof(Index));
+                var solutionTree = DiagramConverter.ConvertToTree(solution);
+
+                
+                
+                return Ok();
             }
-            return View(diagram);
+            return Ok();
         }
     } 
 }

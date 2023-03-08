@@ -10,6 +10,6 @@ namespace SermTreeCore.Models
         }
 
         public IList<IEdge> Relationships { get; set; }
-        public IResult? Result { get; set; }
+        public IList<IResult> Result { get; set; }
     }
 }
