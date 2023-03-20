@@ -18,9 +18,9 @@ namespace WebAPI.Controllers
             if (ModelState.IsValid)
             {
                 var tree = DiagramConverter.ConvertToTree(diagram);
-                return RedirectToAction(nameof(Index));
+                return Ok();
             }
-            return View(diagram);
+            return Ok();
         }
     } 
 }
